@@ -83,11 +83,11 @@ const HeaderComponent = () => {
     <>
         <Header>
         <AppName>
-            <Appicon src="/iicon.png" />
+            <Appicon src="/Recipe-finder/iicon.png" />
             Recipes Finder
         </AppName>
         <SearchBar>
-            <SearchIcon src="/search.png" />
+            <SearchIcon src="/Recipe-finder/search.png" />
             <SearchBox placeholder='Search Recipes' onChange={onTextChange}/>
         </SearchBar>
         </Header>

@@ -42,7 +42,7 @@ const RecipeComponents = (props) => {
             recipeList.length ? recipeList.map((recipeObject, index) => {
             return <RecipeCardComponent key={index} recipeObject={recipeObject.recipe} />
             }
-        ): <Box><Placeholder src = "/iicon.png" /><Text>Find Something To Cook!</Text></Box>}
+        ): <Box><Placeholder src = "/Recipe-finder/iicon.png" /><Text>Find Something To Cook!</Text></Box>}
        
 
     </RecipeList>
