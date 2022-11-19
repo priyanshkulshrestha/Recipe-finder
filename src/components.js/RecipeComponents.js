@@ -13,16 +13,36 @@ const RecipeList = styled.div`
 
 `
 
+const Box = styled.div`
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`
+
+const Placeholder = styled.img`
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    opacity: 50%;
+`
+
+const Text = styled.div`
+    font-size: larger;
+    font-weight: bold;
+
+`
 
 const RecipeComponents = (props) => {
     const recipeList = props.list;
   return (
     <RecipeList>
         {
-            recipeList.length && recipeList.map((recipeObject, index) => {
+            recipeList.length ? recipeList.map((recipeObject, index) => {
             return <RecipeCardComponent key={index} recipeObject={recipeObject.recipe} />
             }
-        )}
+        ): <Box><Placeholder src = "/iicon.png" /><Text>Find Something To Cook!</Text></Box>}
        
 
     </RecipeList>

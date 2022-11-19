@@ -25,22 +25,17 @@ const SeeNewTab = styled(SeeMoreText)`
 `;
 
 
-const openFalse = (open) => {
-  open = false;
-  console.log(open, 1)
-}
-
 const IngedientsComponent = (props) => {
   const index = 1;
   const ingredients = props.ingredients;
   const lable = props.name;
   const url = props.link;
   const open = props.open;
-  const [status, setStatus] = useState(open) 
+  // const [status, setStatus] = useState(open) 
   console.log( open)
   return (
 
-        <Dialog key={index} open = {status}>
+        <Dialog key={index} open = {open}>
             <DialogTitle>Ingredients</DialogTitle>
             <DialogContent>
           <RecipeName key={index}>{lable}</RecipeName>
@@ -61,7 +56,7 @@ const IngedientsComponent = (props) => {
         </DialogContent>
         <DialogActions>
           <SeeNewTab key={index} onClick={() => window.open(url)}>See More</SeeNewTab>
-          <SeeMoreText onClick = {setStatus("")}>Close</SeeMoreText>
+          <SeeMoreText >Close</SeeMoreText>
         </DialogActions>
         </Dialog>
   )
