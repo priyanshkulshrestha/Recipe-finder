@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
+import IngedientsComponent from './IngedientsComponent'
 
 
 const RecipeCard = styled.div`
@@ -17,7 +18,7 @@ const RecipeImg = styled.img`
     height: 200px;
 `
 
-const RecipeName = styled.div`
+export const RecipeName = styled.div`
     font-size: 18px;
     font-weight: 600;
     color: black;
@@ -51,17 +52,22 @@ const RecipeComplete = styled.div`
 
 
 const RecipeCardComponent = (props) => {
+
+    const [showIngridents, setshowIngridents] = useState(false);
     console.log(props)
     const { label, image, ingredients, url } = props.recipeObject;
     // const index = props.key;
   return (
+    <>
+    <IngedientsComponent open={showIngridents} name={label} ingredients={ingredients} />
     <RecipeCard key={props.key}>
         {/* {console.log("index", index)} */}
         <RecipeImg src={image} />
         <RecipeName>{label}</RecipeName>
-        <RecipeIngredients>Ingredients</RecipeIngredients>
-        <RecipeComplete>See Complete Recipe</RecipeComplete>
+        <RecipeIngredients onClick={() => setshowIngridents(true)}>Ingredients</RecipeIngredients>
+        <RecipeComplete onClick = {() => window.open(url)}>See Complete Recipe</RecipeComplete>
     </RecipeCard>
+    </>
   )
 }
 
