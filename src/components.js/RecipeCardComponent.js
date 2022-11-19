@@ -54,12 +54,21 @@ const RecipeComplete = styled.div`
 const RecipeCardComponent = (props) => {
 
     const [showIngridents, setshowIngridents] = useState(false);
+
+    function closeDialoge(){
+        setshowIngridents(false);
+    }
     console.log(props)
     const { label, image, ingredients, url } = props.recipeObject;
     // const index = props.key;
   return (
     <>
-    <IngedientsComponent open={showIngridents} name={label} ingredients={ingredients} />
+    <IngedientsComponent  
+        close={closeDialoge} 
+        open={showIngridents} 
+        name={label} 
+        ingredients={ingredients} />
+
     <RecipeCard key={props.key}>
         {/* {console.log("index", index)} */}
         <RecipeImg src={image} />

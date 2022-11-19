@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -31,8 +31,9 @@ const IngedientsComponent = (props) => {
   const lable = props.name;
   const url = props.link;
   const open = props.open;
+  const close = props.close;
   // const [status, setStatus] = useState(open) 
-  console.log( open)
+ 
   return (
 
         <Dialog key={index} open = {open}>
@@ -56,7 +57,7 @@ const IngedientsComponent = (props) => {
         </DialogContent>
         <DialogActions>
           <SeeNewTab key={index} onClick={() => window.open(url)}>See More</SeeNewTab>
-          <SeeMoreText >Close</SeeMoreText>
+          <SeeMoreText onClick={() =>close()}>Close</SeeMoreText>
         </DialogActions>
         </Dialog>
   )
